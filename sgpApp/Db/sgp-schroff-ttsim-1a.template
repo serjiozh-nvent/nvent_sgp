@@ -1,0 +1,102 @@
+record(longin, "$(P)LEAK")
+{
+  field(DESC, "Leak")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).1 INTEGER: 100")
+}
+
+record(longin, "$(P)CONTAMIN")
+{
+  field(DESC, "Contamination")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 INTEGER: 100")
+}
+
+record(ai, "$(P)LEAKLOC")
+{
+  field(DESC, "Leak Location")
+  field(DTYP, "Snmp")
+  field( EGU, "feet")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(HOPR, "16404.2")
+  field(HIHI, "16404.2")
+  field(HHSV, "MAJOR")
+  field(PREC, "2")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 STRING: 100")
+}
+
+record(longin, "$(P)CBLBRK")
+{
+  field(DESC, "Cable Break")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 INTEGER: 100")
+}
+
+record(longin, "$(P)FAULT")
+{
+  field(DESC, "Fault")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).5 INTEGER: 100")
+}
+
+record(ai, "$(P)CIRCLEN")
+{
+  field(DESC, "Circuit Length")
+  field(DTYP, "Snmp")
+  field( EGU, "feet")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(HOPR, "16404.2")
+  field(HIHI, "16404.2")
+  field(HHSV, "MAJOR")
+  field(PREC, "2")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).6 STRING: 100")
+}
+
+record(ai, "$(P)DETCURR")
+{
+  field(DESC, "Detection Current")
+  field(DTYP, "Snmp")
+  field( EGU, "amps")
+  field(LOPR, "-0.5")
+  field(LOLO, "-0.5")
+  field(LLSV, "MAJOR")
+  field(HOPR, "1000")
+  field(HIHI, "1000")
+  field(HHSV, "MAJOR")
+  field(PREC, "2")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).7 STRING: 100")
+}
+
+record(longin, "$(P)STATUS")
+{
+  field(DESC, "Status")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).8 STRING: 100")
+}
+
+record(fanout, "$(P)SNS-fanout")
+{
+  field(LNK1, "$(P)LEAK")
+  field(LNK2, "$(P)CONTAMIN")
+  field(LNK3, "$(P)LEAKLOC")
+  field(LNK4, "$(P)CBLBRK")
+  field(LNK5, "$(P)FAULT")
+  field(LNK6, "$(P)CIRCLEN")
+  field(LNK7, "$(P)DETCURR")
+  field(LNK8, "$(P)STATUS")
+}
+
+record(bo, "$(P)UpdateSensors")
+{
+  field(DESC, "Update sensors")
+  field(PINI, "YES")
+  field(SCAN, "10 second")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)SNS-fanout")
+}
+

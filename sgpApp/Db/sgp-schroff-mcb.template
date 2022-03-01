@@ -1,0 +1,163 @@
+record(ai, "$(P)TEMP")
+{
+  field(DESC, "MCB Temperature")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field( LOW, "5")
+  field( LSV, "MAJOR")
+  field(HOPR, "100")
+  field(HIHI, "70")
+  field(HHSV, "MAJOR")
+  field(HIGH, "65")
+  field( HSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).1 STRING: 100")
+}
+
+record(ai, "$(P)12V")
+{
+  field(DESC, "MCB 12V")
+  field(DTYP, "Snmp")
+  field( EGU, "volts")
+  field(LOPR, "0")
+  field(LOLO, "10.8")
+  field(LLSV, "MAJOR")
+  field( LOW, "11.4")
+  field( LSV, "MAJOR")
+  field(HOPR, "36")
+  field(HIHI, "13.8")
+  field(HHSV, "MAJOR")
+  field(HIGH, "13.2")
+  field( HSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 STRING: 100")
+}
+
+record(longin, "$(P)REBOOT")
+{
+  field(DESC, "Reboot Reason")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 INTEGER: 100")
+}
+
+record(longin, "$(P)USB1PWR")
+{
+  field(DESC, "USB1 Power Status")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 INTEGER: 100")
+}
+
+record(longin, "$(P)USB2PWR")
+{
+  field(DESC, "USB2 Power Status")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).5 INTEGER: 100")
+}
+
+record(longin, "$(P)MGMT12VST")
+{
+  field(DESC, "MGMT 12V Power Status")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).6 INTEGER: 100")
+}
+
+record(longin, "$(P)I2C1BUS")
+{
+  field(DESC, "I2C_1 Bus Status")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).7 INTEGER: 100")
+}
+
+record(longin, "$(P)I2C2BUS")
+{
+  field(DESC, "I2C_2 Bus Status")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).8 INTEGER: 100")
+}
+
+record(longin, "$(P)LANPHYSLINK")
+{
+  field(DESC, "LAN Physical Link")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).9 INTEGER: 100")
+}
+
+record(longout, "$(P)BUZZER")
+{
+  field(DESC, "Buzzer")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).1 INTEGER: 100 i")
+}
+
+record(longout, "$(P)USB1FLTRES")
+{
+  field(DESC, "USB1 Power Fault Reset")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).2 INTEGER: 100 i")
+}
+
+record(longout, "$(P)USB2FLTRES")
+{
+  field(DESC, "USB2 Power Fault Reset")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).3 INTEGER: 100 i")
+}
+
+record(longout, "$(P)MGMT12VFLTRES")
+{
+  field(DESC, "MGMT 12V Power Fault Reset")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).4 INTEGER: 100 i")
+}
+
+record(fanout, "$(P)SNS-fanout")
+{
+  field(LNK1, "$(P)TEMP")
+  field(LNK2, "$(P)12V")
+  field(LNK3, "$(P)REBOOT")
+  field(LNK4, "$(P)USB1PWR")
+  field(LNK5, "$(P)USB2PWR")
+  field(LNK6, "$(P)MGMT12VST")
+  field(LNK7, "$(P)I2C1BUS")
+  field(LNK8, "$(P)I2C2BUS")
+  field(LNK9, "$(P)LANPHYSLINK")
+}
+
+record(fanout, "$(P)CTL-fanout")
+{
+  field(LNK1, "$(P)BUZZER")
+  field(LNK2, "$(P)USB1FLTRES")
+  field(LNK3, "$(P)USB2FLTRES")
+  field(LNK4, "$(P)MGMT12VFLTRES")
+}
+
+record(bo, "$(P)UpdateSensors")
+{
+  field(DESC, "Update sensors")
+  field(PINI, "YES")
+  field(SCAN, "10 second")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)SNS-fanout")
+}
+
+record(bo, "$(P)UpdateControls")
+{
+  field(DESC, "Update controls")
+  field(PINI, "YES")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)CTL-fanout")
+}
+

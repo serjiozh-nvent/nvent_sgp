@@ -1,0 +1,471 @@
+record(ai, "$(P)AIROUTTOP")
+{
+  field(DESC, "Air Temp Out Top")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).1 STRING: 100")
+}
+
+record(ai, "$(P)AIROUTBTM")
+{
+  field(DESC, "Air Temp Out Bottom")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 STRING: 100")
+}
+
+record(ai, "$(P)AIRINTOP")
+{
+  field(DESC, "Air Temp In Top")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 STRING: 100")
+}
+
+record(ai, "$(P)AIRINBTM")
+{
+  field(DESC, "Air Temp In Bottom")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 STRING: 100")
+}
+
+record(ai, "$(P)AIRDIFFPRES")
+{
+  field(DESC, "Air Differential Pressure")
+  field(DTYP, "Snmp")
+  field( EGU, "kpa")
+  field(LOPR, "-0.5")
+  field(LOLO, "-0.5")
+  field(LLSV, "MAJOR")
+  field(HOPR, "0.5")
+  field(HIHI, "0.5")
+  field(HHSV, "MAJOR")
+  field(PREC, "4")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).5 STRING: 100")
+}
+
+record(ai, "$(P)WATERIN")
+{
+  field(DESC, "Water Temp In")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).6 STRING: 100")
+}
+
+record(ai, "$(P)WATEROUT")
+{
+  field(DESC, "Water Temp Out")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).7 STRING: 100")
+}
+
+record(ai, "$(P)WATERFLOW")
+{
+  field(DESC, "Water Flow")
+  field(DTYP, "Snmp")
+  field( EGU, "liters/minute")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(HOPR, "1000")
+  field(HIHI, "1000")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).8 STRING: 100")
+}
+
+record(ai, "$(P)WATERPRESS")
+{
+  field(DESC, "Water Pressure")
+  field(DTYP, "Snmp")
+  field( EGU, "kpa")
+  field(LOPR, "-500")
+  field(LOLO, "-500")
+  field(LLSV, "MAJOR")
+  field(HOPR, "500")
+  field(HIHI, "500")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).9 STRING: 100")
+}
+
+record(ai, "$(P)REQVALVE")
+{
+  field(DESC, "Requested Valve Opening")
+  field(DTYP, "Snmp")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).10 STRING: 100")
+}
+
+record(ai, "$(P)REQFAN")
+{
+  field(DESC, "Requested Fan Speed")
+  field(DTYP, "Snmp")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(HOPR, "100")
+  field(HIHI, "100")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).11 STRING: 100")
+}
+
+record(ai, "$(P)FAN1")
+{
+  field(DESC, "Speed Fan 1")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).12 STRING: 100")
+}
+
+record(ai, "$(P)FAN2")
+{
+  field(DESC, "Speed Fan 2")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).13 STRING: 100")
+}
+
+record(ai, "$(P)FAN3")
+{
+  field(DESC, "Speed Fan 3")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).14 STRING: 100")
+}
+
+record(ai, "$(P)FAN4")
+{
+  field(DESC, "Speed Fan 4")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).15 STRING: 100")
+}
+
+record(ai, "$(P)COOLPERF")
+{
+  field(DESC, "Current Cooling Performance")
+  field(DTYP, "Snmp")
+  field( EGU, "watts")
+  field(LOPR, "0")
+  field(PREC, "3")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).16 STRING: 100")
+}
+
+record(ai, "$(P)TOTALHEAT")
+{
+  field(DESC, "Total Heat Removed")
+  field(DTYP, "Snmp")
+  field( EGU, "watts*hour")
+  field(LOPR, "0")
+  field(PREC, "3")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).17 STRING: 100")
+}
+
+record(longin, "$(P)FANPOWER")
+{
+  field(DESC, "Fan Power Consumption")
+  field(DTYP, "Snmp")
+  field( EGU, "watts")
+  field(LOPR, "0")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).18 STRING: 100")
+}
+
+record(longin, "$(P)OPHOURSYS")
+{
+  field(DESC, "Operating Hours System")
+  field(DTYP, "Snmp")
+  field( EGU, "hour")
+  field(LOPR, "0")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).19 STRING: 100")
+}
+
+record(longin, "$(P)OPHOURFAN1")
+{
+  field(DESC, "Operating Hours Fan 1")
+  field(DTYP, "Snmp")
+  field( EGU, "hour")
+  field(LOPR, "0")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).20 STRING: 100")
+}
+
+record(longin, "$(P)OPHOURFAN2")
+{
+  field(DESC, "Operating Hours Fan 2")
+  field(DTYP, "Snmp")
+  field( EGU, "hour")
+  field(LOPR, "0")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).21 STRING: 100")
+}
+
+record(longin, "$(P)OPHOURFAN3")
+{
+  field(DESC, "Operating Hours Fan 3")
+  field(DTYP, "Snmp")
+  field( EGU, "hour")
+  field(LOPR, "0")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).22 STRING: 100")
+}
+
+record(longin, "$(P)OPHOURFAN4")
+{
+  field(DESC, "Operating Hours Fan 4")
+  field(DTYP, "Snmp")
+  field( EGU, "hour")
+  field(LOPR, "0")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).23 STRING: 100")
+}
+
+record(ai, "$(P)VALVEFB")
+{
+  field(DESC, "Valve Opening Feedback")
+  field(DTYP, "Snmp")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).24 STRING: 100")
+}
+
+record(longin, "$(P)ONOFF")
+{
+  field(DESC, "Cooler ON/OFF State")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).25 INTEGER: 100")
+}
+
+record(longin, "$(P)ALARMST")
+{
+  field(DESC, "Cooler Alarm State")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).26 INTEGER: 100")
+}
+
+record(longin, "$(P)DOORSW")
+{
+  field(DESC, "Door Switch")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).27 INTEGER: 100")
+}
+
+record(longin, "$(P)CONDLVL")
+{
+  field(DESC, "Condensate Level Switch")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).28 INTEGER: 100")
+}
+
+record(ai, "$(P)WATERFLOWPRESS")
+{
+  field(DESC, "Water Flow/Pressure")
+  field(DTYP, "Snmp")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(PREC, "2")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).29 STRING: 100")
+}
+
+record(longout, "$(P)COOLERON")
+{
+  field(DESC, "Cooler ON/OFF")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).1 INTEGER: 100 i")
+}
+
+record(longout, "$(P)MAXCOOLON")
+{
+  field(DESC, "Max Cooling ON/OFF")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).2 INTEGER: 100 i")
+}
+
+record(longout, "$(P)TEMPCTL")
+{
+  field(DESC, "Temperature Control Variable")
+  field(DTYP, "Snmp")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).3 INTEGER: 100 i")
+}
+
+record(longout, "$(P)TEMPSP")
+{
+  field(DESC, "Temperature Setpoint")
+  field(DTYP, "Snmp")
+  field(LOPR, "40")
+  field(HOPR, "5")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).4 INTEGER: 100 i")
+}
+
+record(longout, "$(P)FANMODECTL")
+{
+  field(DESC, "Fan Speed Control Mode")
+  field(DTYP, "Snmp")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).5 INTEGER: 100 i")
+}
+
+record(longout, "$(P)PRESSDIFFSP")
+{
+  field(DESC, "Pressure Differential Setpoint")
+  field(DTYP, "Snmp")
+  field(LOPR, "150")
+  field(HOPR, "-150")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).11 INTEGER: 100 i")
+}
+
+record(longout, "$(P)VALVECTL")
+{
+  field(DESC, "Manual Water Valve Position")
+  field(DTYP, "Snmp")
+  field(LOPR, "100")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).12 INTEGER: 100 i")
+}
+
+record(longout, "$(P)FANSPEEDCTL")
+{
+  field(DESC, "Manual Fan Level")
+  field(DTYP, "Snmp")
+  field(LOPR, "100")
+  field(HOPR, "20")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).13 INTEGER: 100 i")
+}
+
+record(fanout, "$(P)SNS-fanout1")
+{
+  field(LNK1, "$(P)AIROUTTOP")
+  field(LNK2, "$(P)AIROUTBTM")
+  field(LNK3, "$(P)AIRINTOP")
+  field(LNK4, "$(P)AIRINBTM")
+  field(LNK5, "$(P)AIRDIFFPRES")
+  field(LNK6, "$(P)WATERIN")
+  field(LNK7, "$(P)WATEROUT")
+  field(LNK8, "$(P)WATERFLOW")
+  field(LNK9, "$(P)WATERPRESS")
+  field(LNKA, "$(P)REQVALVE")
+  field(LNKB, "$(P)REQFAN")
+  field(LNKC, "$(P)FAN1")
+  field(LNKD, "$(P)FAN2")
+  field(LNKE, "$(P)FAN3")
+  field(LNKF, "$(P)FAN4")
+}
+
+record(fanout, "$(P)SNS-fanout2")
+{
+  field(LNK1, "$(P)COOLPERF")
+  field(LNK2, "$(P)TOTALHEAT")
+  field(LNK3, "$(P)FANPOWER")
+  field(LNK4, "$(P)OPHOURSYS")
+  field(LNK5, "$(P)OPHOURFAN1")
+  field(LNK6, "$(P)OPHOURFAN2")
+  field(LNK7, "$(P)OPHOURFAN3")
+  field(LNK8, "$(P)OPHOURFAN4")
+  field(LNK9, "$(P)VALVEFB")
+  field(LNKA, "$(P)ONOFF")
+  field(LNKB, "$(P)ALARMST")
+  field(LNKC, "$(P)DOORSW")
+  field(LNKD, "$(P)CONDLVL")
+  field(LNKE, "$(P)WATERFLOWPRESS")
+}
+
+record(fanout, "$(P)SNS-fanout")
+{
+  field(LNK1, "$(P)SNS-fanout1")
+  field(LNK2, "$(P)SNS-fanout2")
+}
+
+record(fanout, "$(P)CTL-fanout")
+{
+  field(LNK1, "$(P)COOLERON")
+  field(LNK2, "$(P)MAXCOOLON")
+  field(LNK3, "$(P)TEMPCTL")
+  field(LNK4, "$(P)TEMPSP")
+  field(LNK5, "$(P)FANMODECTL")
+  field(LNK6, "$(P)PRESSDIFFSP")
+  field(LNK7, "$(P)VALVECTL")
+  field(LNK8, "$(P)FANSPEEDCTL")
+}
+
+record(bo, "$(P)UpdateSensors")
+{
+  field(DESC, "Update sensors")
+  field(PINI, "YES")
+  field(SCAN, "10 second")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)SNS-fanout")
+}
+
+record(bo, "$(P)UpdateControls")
+{
+  field(DESC, "Update controls")
+  field(PINI, "YES")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)CTL-fanout")
+}
+

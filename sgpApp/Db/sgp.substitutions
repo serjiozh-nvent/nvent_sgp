@@ -1,0 +1,24 @@
+file "sgp-info.template" {
+  pattern { P }
+  { "$(PREFIX):" }
+}
+file "sgp-schroff-1w-sensor.template" {
+  pattern { P, RESID }
+  { "$(PREFIX):1WS:", "1000" }
+}
+file "sgp-schroff-thd-sensor.template" {
+  pattern { P, RESID }
+  { "$(PREFIX):THD:", "1001" }
+}
+file "sgp-schroff-ttsim-1a.template" {
+  pattern { P, RESID }
+  { "$(PREFIX):TTSIM1A:", "2000" }
+}
+file "sgp-schroff-rackchiller-rear-door.template" {
+  pattern { P, RESID }
+  { "$(PREFIX):CHILLER:", "2001" }
+}
+file "sgp-schroff-mcb.template" {
+  pattern { P, RESID }
+  { "$(PREFIX):MCB:", "3000" }
+}

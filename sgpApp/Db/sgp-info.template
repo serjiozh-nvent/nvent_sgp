@@ -1,0 +1,47 @@
+record(stringin, "$(P)UN")
+{
+  field(DESC, "Unit Name")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::unitName.0 STRING: 100")
+}
+
+record(stringin, "$(P)HW")
+{
+  field(DESC, "HardWare Version")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::hardwareVersion.0 STRING: 100")
+}
+
+record(stringin, "$(P)FW")
+{
+  field(DESC, "FirmWare Version")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::firmwareVersion.0 STRING: 100")
+}
+
+record(stringin, "$(P)MODEL")
+{
+  field(DESC, "Model Name")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::model.0 STRING: 100")
+}
+
+record(fanout, "$(P)Info-Fout")
+{
+  field(LNK1, "$(P)UN")
+  field(LNK2, "$(P)HW")
+  field(LNK3, "$(P)FW")
+  field(LNK4, "$(P)MODEL")
+}
+
+record(bo, "$(P)UpdateInfo")
+{
+  field(DESC, "Update setting readbacks")
+  field(ZNAM, "Revert")
+  field(ONAM, "revert")
+  field(FLNK, "$(P)Info-Fout")
+  field(HIGH, "2")
+  field( VAL, "1")
+  field(PINI, "YES")
+}
+

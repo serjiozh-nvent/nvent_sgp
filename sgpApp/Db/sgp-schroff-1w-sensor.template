@@ -1,0 +1,94 @@
+record(ai, "$(P)TEMP")
+{
+  field(DESC, "Temperature")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).1 STRING: 100")
+}
+
+record(ai, "$(P)HUMIDITY")
+{
+  field(DESC, "Humidity")
+  field(DTYP, "Snmp")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(HOPR, "100")
+  field(HIHI, "100")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 STRING: 100")
+}
+
+record(longin, "$(P)DIGIN1")
+{
+  field(DESC, "Digital Input 1")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 INTEGER: 100")
+}
+
+record(longin, "$(P)DIGIN2")
+{
+  field(DESC, "Digital Input 2")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 INTEGER: 100")
+}
+
+record(longout, "$(P)PIN0CTL")
+{
+  field(DESC, "Pin 0 Control")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).5 INTEGER: 100 i")
+}
+
+record(longout, "$(P)PIN1CTL")
+{
+  field(DESC, "Pin 1 Control")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).6 INTEGER: 100 i")
+}
+
+record(fanout, "$(P)SNS-fanout")
+{
+  field(LNK1, "$(P)TEMP")
+  field(LNK2, "$(P)HUMIDITY")
+  field(LNK3, "$(P)DIGIN1")
+  field(LNK4, "$(P)DIGIN2")
+}
+
+record(fanout, "$(P)CTL-fanout")
+{
+  field(LNK1, "$(P)PIN0CTL")
+  field(LNK2, "$(P)PIN1CTL")
+}
+
+record(bo, "$(P)UpdateSensors")
+{
+  field(DESC, "Update sensors")
+  field(PINI, "YES")
+  field(SCAN, "10 second")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)SNS-fanout")
+}
+
+record(bo, "$(P)UpdateControls")
+{
+  field(DESC, "Update controls")
+  field(PINI, "YES")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)CTL-fanout")
+}
+

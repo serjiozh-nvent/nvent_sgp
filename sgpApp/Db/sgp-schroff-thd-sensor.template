@@ -1,0 +1,61 @@
+record(ai, "$(P)TEMP")
+{
+  field(DESC, "Humidity")
+  field(DTYP, "Snmp")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field(HOPR, "100")
+  field(HIHI, "100")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).1 STRING: 100")
+}
+
+record(longin, "$(P)HUMIDITY")
+{
+  field(DESC, "Digital Input 1")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 INTEGER: 100")
+}
+
+record(longin, "$(P)DIGIN1")
+{
+  field(DESC, "Digital Input 2")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 INTEGER: 100")
+}
+
+record(ai, "$(P)DIGIN2")
+{
+  field(DESC, "Temperature")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 STRING: 100")
+}
+
+record(fanout, "$(P)SNS-fanout")
+{
+  field(LNK1, "$(P)TEMP")
+  field(LNK2, "$(P)HUMIDITY")
+  field(LNK3, "$(P)DIGIN1")
+  field(LNK4, "$(P)DIGIN2")
+}
+
+record(bo, "$(P)UpdateSensors")
+{
+  field(DESC, "Update sensors")
+  field(PINI, "YES")
+  field(SCAN, "10 second")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)SNS-fanout")
+}
+
