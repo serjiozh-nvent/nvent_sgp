@@ -447,11 +447,8 @@ class ResourceInfoFetcher:
             self.logger.error("Can't get resource name %s" % control.res)
             resource = self.__create_resource(control.res, control.res)
 
-            # create new resource
-            resource = ResourceData(control.res, control.res)
-
             # create resource mapping
-            self.map[sensor.res] = resource
+            self.map[control.res] = resource
 
         # get control minimum and maximum values
         control.max, control.min = self.client.query_control_limits(
@@ -691,12 +688,14 @@ class EpicsDatabaseGenerator:
                         prec = prec + 1
                     r.field("PREC", str(prec))
                 if sensor.state:
+                    oid="measurementsExternalSensorState"
                     type = "INTEGER: 100"
                 else:
+                    oid="measurementsExternalSensorValue"
                     type = "STRING: 100"
                 inp = (
-                    "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).%s %s"
-                    % (sensor.id, type)
+                    "@$(HOST) $(USER_R) SGP-MIB::%s.$(RESID).%s %s"
+                    % (oid, sensor.id, type)
                 )
                 r.field(" INP", inp)
             return name
