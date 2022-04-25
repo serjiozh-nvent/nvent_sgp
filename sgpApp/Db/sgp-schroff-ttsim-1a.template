@@ -2,14 +2,14 @@ record(longin, "$(P)LEAK")
 {
   field(DESC, "Leak")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).1 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).1 INTEGER: 100")
 }
 
 record(longin, "$(P)CONTAMIN")
 {
   field(DESC, "Contamination")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).2 INTEGER: 100")
 }
 
 record(ai, "$(P)LEAKLOC")
@@ -31,14 +31,14 @@ record(longin, "$(P)CBLBRK")
 {
   field(DESC, "Cable Break")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).4 INTEGER: 100")
 }
 
 record(longin, "$(P)FAULT")
 {
   field(DESC, "Fault")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).5 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).5 INTEGER: 100")
 }
 
 record(ai, "$(P)CIRCLEN")

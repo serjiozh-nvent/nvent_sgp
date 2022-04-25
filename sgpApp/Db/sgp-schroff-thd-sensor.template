@@ -16,14 +16,14 @@ record(longin, "$(P)HUMIDITY")
 {
   field(DESC, "Digital Input 1")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).2 INTEGER: 100")
 }
 
 record(longin, "$(P)DIGIN1")
 {
   field(DESC, "Digital Input 2")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).3 INTEGER: 100")
 }
 
 record(ai, "$(P)DIGIN2")

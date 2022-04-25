@@ -18,6 +18,10 @@ file "sgp-schroff-rackchiller-rear-door.template" {
   pattern { P, RESID }
   { "$(PREFIX):CHILLER:", "2001" }
 }
+file "sgp-schroff-shx30.template" {
+  pattern { P, RESID }
+  { "$(PREFIX)SHX30:", "2002" }
+}
 file "sgp-schroff-mcb.template" {
   pattern { P, RESID }
   { "$(PREFIX):MCB:", "3000" }

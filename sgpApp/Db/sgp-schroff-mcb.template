@@ -40,49 +40,49 @@ record(longin, "$(P)REBOOT")
 {
   field(DESC, "Reboot Reason")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).3 INTEGER: 100")
 }
 
 record(longin, "$(P)USB1PWR")
 {
   field(DESC, "USB1 Power Status")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).4 INTEGER: 100")
 }
 
 record(longin, "$(P)USB2PWR")
 {
   field(DESC, "USB2 Power Status")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).5 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).5 INTEGER: 100")
 }
 
 record(longin, "$(P)MGMT12VST")
 {
   field(DESC, "MGMT 12V Power Status")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).6 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).6 INTEGER: 100")
 }
 
 record(longin, "$(P)I2C1BUS")
 {
   field(DESC, "I2C_1 Bus Status")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).7 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).7 INTEGER: 100")
 }
 
 record(longin, "$(P)I2C2BUS")
 {
   field(DESC, "I2C_2 Bus Status")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).8 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).8 INTEGER: 100")
 }
 
 record(longin, "$(P)LANPHYSLINK")
 {
   field(DESC, "LAN Physical Link")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).9 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).9 INTEGER: 100")
 }
 
 record(longout, "$(P)BUZZER")

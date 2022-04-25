@@ -31,14 +31,14 @@ record(longin, "$(P)DIGIN1")
 {
   field(DESC, "Digital Input 1")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).3 INTEGER: 100")
 }
 
 record(longin, "$(P)DIGIN2")
 {
   field(DESC, "Digital Input 2")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).4 INTEGER: 100")
 }
 
 record(longout, "$(P)PIN0CTL")

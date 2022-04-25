@@ -1,0 +1,327 @@
+record(longin, "$(P)VALVE")
+{
+  field(DESC, "Valve Position")
+  field(DTYP, "Snmp")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).1 STRING: 100")
+}
+
+record(ai, "$(P)TEMP")
+{
+  field(DESC, "Actual temp cooler")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).2 STRING: 100")
+}
+
+record(ai, "$(P)WATERIN")
+{
+  field(DESC, "Temp. water inlet (R1)")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).3 STRING: 100")
+}
+
+record(ai, "$(P)AIRINTOP")
+{
+  field(DESC, "Temp. air inlet TOP (R2)")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).4 STRING: 100")
+}
+
+record(ai, "$(P)AIRINAVG")
+{
+  field(DESC, "Temp. air inlet average R2/R3")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).5 STRING: 100")
+}
+
+record(ai, "$(P)AIRINBTM")
+{
+  field(DESC, "Temp. air inlet BOTTOM (R3)")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).6 STRING: 100")
+}
+
+record(ai, "$(P)AIROUTTOP")
+{
+  field(DESC, "Temp. air outlet TOP (R4)")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).7 STRING: 100")
+}
+
+record(ai, "$(P)AIROUTAVG")
+{
+  field(DESC, "Temp. air outlet average R4/R5")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).8 STRING: 100")
+}
+
+record(ai, "$(P)AIROUTBTM")
+{
+  field(DESC, "Temp. air outlet BOTTOM (R5)")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).9 STRING: 100")
+}
+
+record(ai, "$(P)EXTTEMP")
+{
+  field(DESC, "External actual temp")
+  field(DTYP, "Snmp")
+  field( EGU, "degreesC")
+  field(LOPR, "-128")
+  field(LOLO, "-128")
+  field(LLSV, "MAJOR")
+  field(HOPR, "128")
+  field(HIHI, "128")
+  field(HHSV, "MAJOR")
+  field(PREC, "1")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).10 STRING: 100")
+}
+
+record(longin, "$(P)FAN1")
+{
+  field(DESC, "Fan 1")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).11 STRING: 100")
+}
+
+record(longin, "$(P)FAN2")
+{
+  field(DESC, "Fan 2")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).12 STRING: 100")
+}
+
+record(longin, "$(P)FAN3")
+{
+  field(DESC, "Fan 3")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).13 STRING: 100")
+}
+
+record(longin, "$(P)FAN4")
+{
+  field(DESC, "Fan 4")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).14 STRING: 100")
+}
+
+record(longin, "$(P)FAN5")
+{
+  field(DESC, "Fan 5")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).15 STRING: 100")
+}
+
+record(longin, "$(P)FAN6")
+{
+  field(DESC, "Fan 6")
+  field(DTYP, "Snmp")
+  field( EGU, "revolutions/min")
+  field(LOPR, "0")
+  field(LOLO, "0")
+  field(LLSV, "MAJOR")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).16 STRING: 100")
+}
+
+record(longin, "$(P)ERR1")
+{
+  field(DESC, "Errors 1")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).17 INTEGER: 100")
+}
+
+record(longin, "$(P)ERR2")
+{
+  field(DESC, "Errors 2")
+  field(DTYP, "Snmp")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).18 INTEGER: 100")
+}
+
+record(longout, "$(P)COOLERON")
+{
+  field(DESC, "Cooler ON/OFF")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).1 INTEGER: 100 i")
+}
+
+record(longout, "$(P)TEMPSP")
+{
+  field(DESC, "Set Temperature")
+  field(DTYP, "Snmp")
+  field(LOPR, "40")
+  field(HOPR, "18")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).2 INTEGER: 100 i")
+}
+
+record(longout, "$(P)FANCTL")
+{
+  field(DESC, "Fan Speed")
+  field(DTYP, "Snmp")
+  field(LOPR, "100")
+  field(HOPR, "30")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).3 INTEGER: 100 i")
+}
+
+record(longout, "$(P)MAXCOOLON")
+{
+  field(DESC, "Max Cooling ON/OFF")
+  field(DTYP, "Snmp")
+  field(LOPR, "3")
+  field(HOPR, "0")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).4 INTEGER: 100 i")
+}
+
+record(longout, "$(P)PROBESEL")
+{
+  field(DESC, "Probe Selection")
+  field(DTYP, "Snmp")
+  field( OUT, "@$(HOST) $(USER_W) SGP-MIB::ctrlCachedState.$(RESID).5 INTEGER: 100 i")
+}
+
+record(fanout, "$(P)SNS-fanout1")
+{
+  field(LNK1, "$(P)VALVE")
+  field(LNK2, "$(P)TEMP")
+  field(LNK3, "$(P)WATERIN")
+  field(LNK4, "$(P)AIRINTOP")
+  field(LNK5, "$(P)AIRINAVG")
+  field(LNK6, "$(P)AIRINBTM")
+  field(LNK7, "$(P)AIROUTTOP")
+  field(LNK8, "$(P)AIROUTAVG")
+  field(LNK9, "$(P)AIROUTBTM")
+  field(LNKA, "$(P)EXTTEMP")
+  field(LNKB, "$(P)FAN1")
+  field(LNKC, "$(P)FAN2")
+  field(LNKD, "$(P)FAN3")
+  field(LNKE, "$(P)FAN4")
+  field(LNKF, "$(P)FAN5")
+}
+
+record(fanout, "$(P)SNS-fanout2")
+{
+  field(LNK1, "$(P)FAN6")
+  field(LNK2, "$(P)ERR1")
+  field(LNK3, "$(P)ERR2")
+}
+
+record(fanout, "$(P)SNS-fanout")
+{
+  field(LNK1, "$(P)SNS-fanout1")
+  field(LNK2, "$(P)SNS-fanout2")
+}
+
+record(fanout, "$(P)CTL-fanout")
+{
+  field(LNK1, "$(P)COOLERON")
+  field(LNK2, "$(P)TEMPSP")
+  field(LNK3, "$(P)FANCTL")
+  field(LNK4, "$(P)MAXCOOLON")
+  field(LNK5, "$(P)PROBESEL")
+}
+
+record(bo, "$(P)UpdateSensors")
+{
+  field(DESC, "Update sensors")
+  field(PINI, "YES")
+  field(SCAN, "10 second")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)SNS-fanout")
+}
+
+record(bo, "$(P)UpdateControls")
+{
+  field(DESC, "Update controls")
+  field(PINI, "YES")
+  field(ZNAM, "Update")
+  field(ONAM, "update")
+  field(FLNK, "$(P)CTL-fanout")
+}
+
