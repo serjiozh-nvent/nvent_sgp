@@ -293,28 +293,28 @@ record(longin, "$(P)ONOFF")
 {
   field(DESC, "Cooler ON/OFF State")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).25 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).25 INTEGER: 100")
 }
 
 record(longin, "$(P)ALARMST")
 {
   field(DESC, "Cooler Alarm State")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).26 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).26 INTEGER: 100")
 }
 
 record(longin, "$(P)DOORSW")
 {
   field(DESC, "Door Switch")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).27 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).27 INTEGER: 100")
 }
 
 record(longin, "$(P)CONDLVL")
 {
   field(DESC, "Condensate Level Switch")
   field(DTYP, "Snmp")
-  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorValue.$(RESID).28 INTEGER: 100")
+  field( INP, "@$(HOST) $(USER_R) SGP-MIB::measurementsExternalSensorState.$(RESID).28 INTEGER: 100")
 }
 
 record(ai, "$(P)WATERFLOWPRESS")
