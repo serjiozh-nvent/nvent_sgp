@@ -23,7 +23,7 @@ sgp_registerRecordDeviceDriver pdbbase
 
 ###############################################################################
 # Load record instances
-dbLoadRecords("db/sgp.db","PREFIX=$(P),HOST=$(HOSTNAME),USER_R=public,USER_W=private")
+dbLoadRecords("db/sgp.db","PREFIX=$(P):,HOST=$(HOSTNAME),USER_R=public,USER_W=private")
 
 ###############################################################################
 # Start EPICS
